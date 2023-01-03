@@ -48,9 +48,9 @@ lines(m_TR[,2], col = "red")
 lines(m_TR[,3], col = "black")
 
 # calculate total utility, cost and discounted utility and cost.
-utility   <-  sum(m_TR %*% v_hs_utils)
+utility   <-  sum(m_TR %*% as.numeric(v_hs_utils))
 cost      <-  sum(m_TR %*% v_hs_cost)
-d_utility <-  as.numeric(t(v_dw) %*% m_TR %*% v_hs_utils)
+d_utility <-  as.numeric(t(v_dw) %*% m_TR %*% as.numeric(v_hs_utils))
 d_cost    <-  as.numeric(t(v_dw) %*% m_TR %*% v_hs_cost)
 
 
